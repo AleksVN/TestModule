@@ -1,0 +1,21 @@
+<?php
+/** @var $block \Voloshkov\News\Block\Edit
+ * @var $models \Voloshkov\News\Model\NewsModel[]
+ */
+$models = $block->getData('novyni'); ?>
+
+<h2>ToDo list</h2>
+<?php  foreach ($models as $model) : ?>
+
+        <h3><a href="<?= $block->getViewUrl($model->getId()); ?>"> <?= $model->getData('title') ?></a></h3>
+
+        <div>
+            <p> <?= $model->getData('description') ?> </p>
+
+        </div>
+
+        <div class="info">
+            <h5>Update: <?= $model->getData('updated_at') ?></h5>
+        </div>
+
+<?php endforeach; ?>

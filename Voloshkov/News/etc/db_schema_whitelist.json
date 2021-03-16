@@ -1,0 +1,16 @@
+{
+    "news": {
+        "column": {
+            "news_id": true,
+            "title": true,
+            "description": true,
+            "content": true,
+            "is_top": true,
+            "admin_id": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

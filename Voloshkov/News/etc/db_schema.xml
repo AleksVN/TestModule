@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="news" resource="default" engine="innodb" comment="Voloshkov News Table">
+        <column xsi:type="int" name="news_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="News ID"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Заголовок новини"/>
+        <column xsi:type="varchar" name="description" nullable="true" length="255" comment="Короткий опис"/>
+        <column xsi:type="text" name="content" nullable="true" comment="Контент"/>
+        <column xsi:type="boolean" name="is_top" nullable="false" default="false" comment="Перевірка чи топ"/>
+        <column xsi:type="int" name="admin_id" padding="10" unsigned="true" nullable="false" identity="false"
+                default="0" comment="Адмін ID"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="false" nullable="true" default="CURRENT_TIMESTAMP" comment="Last updated date"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="news_id"/>
+        </constraint>
+    </table>
+</schema>
